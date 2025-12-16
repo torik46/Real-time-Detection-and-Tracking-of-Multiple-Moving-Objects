@@ -26,8 +26,6 @@ OPENCV_OBJECT_TRACKERS = {
 &quot;kcf&quot;: cv2.TrackerKCF_create,
 #&quot;boosting&quot;: cv2.TrackerBoosting_create,
 
-78
-
 &quot;mil&quot;: cv2.TrackerMIL_create,
 #&quot;tld&quot;: cv2.TrackerTLD_create,
 #&quot;medianflow&quot;: cv2.TrackerMedianFlow_create,
@@ -61,7 +59,6 @@ def distance(a,b) :
 return (a[0]-b[0])**2+(a[1]-b[1])**2
 while True:
 
-79
 # grab the current frame, then handle if we are using a
 # VideoStream or VideoCapture object
 frame = vs.read()
@@ -93,8 +90,6 @@ pause_frame = pause_frame+1
 trajectories.append([centx,centy])
 cv2.polylines(frame, [np.array(trajectories)],False,color)
 if count%3 == 0 :
-
-80
 
 prev_box = (centx,centy)
 cv2.putText(frame, f&quot;Pause :{round(pause_frame/60,2)}s&quot;, (10,50),
@@ -129,7 +124,6 @@ showCrosshair=True)
 tracker.init(frame, initBB)
 fps = FPS().start()
 
-81
 # if the `q` key was pressed, break from the loop
 elif key == ord(&quot;q&quot;):
 break
